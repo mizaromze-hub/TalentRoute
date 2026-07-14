@@ -1,0 +1,14 @@
+USE talentroute;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS company_id INT NULL AFTER student_id;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS apply_date DATE NULL AFTER company_name;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS start_date DATE NULL AFTER apply_date;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS end_date DATE NULL AFTER start_date;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS resume_file VARCHAR(255) NULL AFTER end_date;
+ALTER TABLE applications ADD COLUMN IF NOT EXISTS remarks TEXT NULL AFTER status;
+ALTER TABLE applications MODIFY status ENUM('pending','applied','reviewing','interview','approved','offered','rejected','completed') NOT NULL DEFAULT 'applied';
+UPDATE applications SET apply_date=DATE(created) WHERE apply_date IS NULL;
+UPDATE applications a LEFT JOIN companies c ON c.company_name=a.company_name SET a.company_id=c.id WHERE a.company_id IS NULL OR a.company_id=0;
+ALTER TABLE leaves ADD COLUMN IF NOT EXISTS total_days INT NOT NULL DEFAULT 1 AFTER end_date;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS industry VARCHAR(120) NULL AFTER company_name;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS company_email VARCHAR(150) NULL AFTER phone_number;
+UPDATE leaves SET total_days=DATEDIFF(end_date,start_date)+1 WHERE total_days IS NULL OR total_days<1;

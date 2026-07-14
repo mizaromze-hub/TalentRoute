@@ -1,0 +1,14 @@
+/vendor/
+/tmp/
+/logs/
+/config/app_local.php
+
+/webroot/uploads/
+/webroot/files/
+
+.env
+
+.idea/
+.vscode/
+
+*.log
