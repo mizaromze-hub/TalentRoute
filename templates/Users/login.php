@@ -34,19 +34,40 @@
                 </div>
             </div>
 
-            <!-- Input Password -->
-            <div>
-                <div class="flex justify-between mb-2">
-                    <label class="text-xs font-bold uppercase tracking-wide text-slate-400">Kata Laluan</label>
-                    <a href="#" class="text-xs font-semibold text-purple-400 hover:underline">Lupa?</a>
-                </div>
-                <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-                        <i class="fa-solid fa-lock"></i>
-                    </span>
-                    <input type="password" name="password" required placeholder="••••••••" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition">
-                </div>
-            </div>
+           <!-- Input Password -->
+<div>
+    <div class="mb-2">
+        <label class="text-xs font-bold uppercase tracking-wide text-slate-400">
+            Kata Laluan
+        </label>
+    </div>
+
+    <div class="relative">
+        <!-- Lock Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+            <i class="fa-solid fa-lock"></i>
+        </span>
+
+        <!-- Password Input -->
+        <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="••••••••"
+            class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-12 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition">
+
+        <!-- Eye Icon -->
+        <button
+            type="button"
+            onclick="togglePassword()"
+            class="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-500 hover:text-purple-400">
+
+            <i id="eyeIcon" class="fa-solid fa-eye"></i>
+
+        </button>
+    </div>
+</div>
 
             <!-- Button Submit -->
             <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-150 text-sm">
@@ -55,12 +76,31 @@
         <?= $this->Form->end() ?>
 
         <!-- Footer Card -->
-        <p class="text-center text-xs text-slate-500 mt-6">
-            Belum mempunyai akaun? <a href="#" class="text-purple-400 font-semibold hover:underline">
-    Hubungi Admin
-</a>
-        </p>
+<p class="text-center text-xs text-slate-500 mt-6">
+    Belum mempunyai akaun?
+    <a href="mailto:admin@talentroute.com?subject=Permohonan Akaun TalentRoute"
+       class="text-purple-400 font-semibold hover:text-pink-400 hover:underline transition duration-200">
+        Hubungi Admin
+    </a>
+</p>
     </div>
+
+<script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    }
+}
+</script>
 
 </body>
 </html>

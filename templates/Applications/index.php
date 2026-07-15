@@ -184,7 +184,11 @@ $approvedStatuses = [
 
         <div
             class="bg-white dark:bg-slate-800
-            rounded-2xl shadow p-5 md:p-6"
+            rounded-2xl border border-slate-200
+            dark:border-slate-700
+            shadow-lg hover:shadow-xl
+            transition-all duration-300
+            p-6"
         >
             <div
                 class="flex flex-col lg:flex-row
@@ -194,7 +198,10 @@ $approvedStatuses = [
 
                     <div
                         class="flex flex-wrap
-                        items-center gap-3 mb-2"
+                        items-center justify-between
+                        border-b border-slate-200
+                        dark:border-slate-700
+                        pb-4 mb-4"
                     >
                         <h2
                             class="font-black text-xl
@@ -207,9 +214,7 @@ $approvedStatuses = [
                         </h2>
 
                         <span
-                            class="inline-flex px-3 py-1
-                            rounded-full text-xs font-bold
-                            <?= h($statusClass) ?>"
+                           class="px-6 py-3 rounded-full text-base font-bold <?= h($statusClass) ?>"
                         >
                             <?= h($statusLabel) ?>
                         </span>
@@ -273,9 +278,16 @@ $approvedStatuses = [
                         sm:grid-cols-3 gap-3 text-sm"
                     >
                         <div
-                            class="bg-slate-50
-                            dark:bg-slate-900/60
-                            rounded-lg p-3"
+                            class="bg-gradient-to-r
+                            from-purple-50
+                            to-pink-50
+                            dark:from-slate-900
+                            dark:to-slate-800
+                            border border-purple-100
+                            dark:border-slate-700
+                            rounded-xl
+                            p-4
+                            shadow-sm"
                         >
                             <p class="text-xs text-slate-500">
                                 Apply Date
@@ -290,9 +302,15 @@ $approvedStatuses = [
                         </div>
 
                         <div
-                            class="bg-slate-50
-                            dark:bg-slate-900/60
-                            rounded-lg p-3"
+                            class="bg-gradient-to-r
+                            from-blue-50
+                            to-indigo-50
+                            dark:from-slate-900
+                            dark:to-slate-800
+                            border border-blue-100
+                            dark:border-slate-700
+                            rounded-xl
+                            p-4"
                         >
                             <p class="text-xs text-slate-500">
                                 Start Date
@@ -307,9 +325,15 @@ $approvedStatuses = [
                         </div>
 
                         <div
-                            class="bg-slate-50
-                            dark:bg-slate-900/60
-                            rounded-lg p-3"
+                            class="bg-gradient-to-r
+                            from-emerald-50
+                            to-green-50
+                            dark:from-slate-900
+                            dark:to-slate-800
+                            border border-emerald-100
+                            dark:border-slate-700
+                            rounded-xl
+                            p-4"
                         >
                             <p class="text-xs text-slate-500">
                                 End Date
@@ -328,9 +352,13 @@ $approvedStatuses = [
                         !empty($application['remarks'])
                     ): ?>
                         <div
-                            class="mt-4 bg-slate-100
-                            dark:bg-slate-900
-                            rounded-lg p-3"
+                            class="mt-5
+                                bg-slate-50
+                                dark:bg-slate-900
+                                border border-slate-200
+                                dark:border-slate-700
+                                rounded-xl
+                                p-4"
                         >
                             <p
                                 class="text-xs font-bold
@@ -359,8 +387,14 @@ $approvedStatuses = [
                         <?php if ($resume): ?>
                             <a
                                 class="inline-flex items-center
-                                gap-2 text-purple-600
-                                hover:text-purple-700"
+                                        gap-2
+                                        bg-purple-600
+                                        hover:bg-purple-700
+                                        text-white
+                                        rounded-lg
+                                        px-4
+                                        py-2
+                                        transition"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="<?= $this->Url->build(

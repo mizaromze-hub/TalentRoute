@@ -23,25 +23,25 @@ $activeNav = ' bg-purple-100 text-purple-700 dark:bg-slate-800 dark:text-purple-
 <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#0f172a]/95 border-b border-slate-200 dark:border-slate-800 px-4 py-3 shadow">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
         <a href="<?= $this->Url->build(['controller' => 'Dashboard', 'action' => 'index']) ?>"
-           class="font-black text-xl text-purple-600">
+           class="font-black text-2xl text-purple-600">
             ⚡ TALENTROUTE
         </a>
 
         <?php if ($auth): ?>
-            <div class="flex flex-wrap items-center gap-1 text-xs font-bold">
+            <div class="flex flex-wrap items-center gap-2 text-sm font-bold">
                 <a class="<?= h($baseNav . ($currentController === 'dashboard' ? $activeNav : '')) ?>"
                    href="<?= $this->Url->build(['controller' => 'Dashboard', 'action' => 'index']) ?>">
-                    🏠 Dashboard
+                     Dashboard
                 </a>
 
                 <?php if ($role === 'admin'): ?>
                     <a class="<?= h($baseNav . ($currentController === 'students' ? $activeNav : '')) ?>"
                        href="<?= $this->Url->build(['controller' => 'Students', 'action' => 'index']) ?>">
-                        🎓 Students
+                         Students
                     </a>
                     <a class="<?= h($baseNav . ($currentController === 'companies' ? $activeNav : '')) ?>"
                        href="<?= $this->Url->build(['controller' => 'Companies', 'action' => 'index']) ?>">
-                        🏢 Companies
+                         Companies
                     </a>
                 <?php endif; ?>
 
@@ -53,18 +53,18 @@ $activeNav = ' bg-purple-100 text-purple-700 dark:bg-slate-800 dark:text-purple-
                             : ''
                     )) ?>"
                        href="<?= $this->Url->build(['controller' => 'Internships', 'action' => 'search']) ?>">
-                        🔎 Internships
+                         Internships
                     </a>
                 <?php endif; ?>
 
                 <a class="<?= h($baseNav . ($currentController === 'applications' ? $activeNav : '')) ?>"
                    href="<?= $this->Url->build(['controller' => 'Applications', 'action' => 'index']) ?>">
-                    📂 Applications
+                     Applications
                 </a>
 
                 <a class="<?= h($baseNav . ($currentController === 'leaves' ? $activeNav : '')) ?>"
                    href="<?= $this->Url->build(['controller' => 'Leaves', 'action' => 'index']) ?>">
-                    📅 Leave
+                     Leave
                 </a>
 
                 <?php if ($role === 'student'): ?>
@@ -75,7 +75,7 @@ $activeNav = ' bg-purple-100 text-purple-700 dark:bg-slate-800 dark:text-purple-
                             : ''
                     )) ?>"
                        href="<?= $this->Url->build(['controller' => 'Students', 'action' => 'view']) ?>">
-                        👤 Profile
+                         Profile
                     </a>
                 <?php elseif ($role === 'company'): ?>
                     <a class="<?= h($baseNav . (
@@ -85,7 +85,7 @@ $activeNav = ' bg-purple-100 text-purple-700 dark:bg-slate-800 dark:text-purple-
                             : ''
                     )) ?>"
                        href="<?= $this->Url->build(['controller' => 'Companies', 'action' => 'view']) ?>">
-                        🏢 Profile
+                         Profile
                     </a>
                 <?php endif; ?>
             </div>
@@ -97,7 +97,7 @@ $activeNav = ' bg-purple-100 text-purple-700 dark:bg-slate-800 dark:text-purple-
                 <button id="theme" type="button"
                         class="px-3 py-2 rounded-lg bg-slate-200 dark:bg-slate-800"
                         aria-label="Toggle theme">🌓</button>
-                <a class="px-3 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold"
+                <a class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-bold"
                    href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'logout']) ?>">
                     Logout
                 </a>

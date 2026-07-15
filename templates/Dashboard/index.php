@@ -77,7 +77,7 @@ $statusBadgeClasses = [
     ></script>
 <?php endif; ?>
 
-<div class="space-y-6">
+<div class="space-y-5">
 
     <div
         class="rounded-2xl bg-gradient-to-r
@@ -97,7 +97,7 @@ $statusBadgeClasses = [
                 </p>
 
                 <h1 class="text-2xl md:text-3xl font-black mt-1">
-                    Selamat Datang,
+                    Welcome,
                     <?= h((string)$displayName) ?>!
                 </h1>
 
@@ -107,18 +107,8 @@ $statusBadgeClasses = [
                 </p>
             </div>
 
-            <div
-                class="rounded-xl bg-white/10
-                border border-white/20 px-5 py-3"
-            >
-                <p class="text-xs opacity-75">
-                    Approval Rate
-                </p>
+            
 
-                <p class="text-3xl font-black">
-                    <?= h((string)$approvalRate) ?>%
-                </p>
-            </div>
         </div>
     </div>
 
@@ -161,7 +151,16 @@ $statusBadgeClasses = [
             <?php foreach ($adminCards as $card): ?>
                 <div
                     class="bg-white dark:bg-slate-800
-                    rounded-xl p-5 shadow"
+                    rounded-xl p-5 shadow-md hover:shadow-xl transition duration-300
+                    border-l-4
+                    <?= match($card['label']) {
+                        'Students' => 'border-purple-600',
+                        'Companies' => 'border-blue-500',
+                        'Applications' => 'border-orange-500',
+                        'Leave Requests' => 'border-green-500',
+                        'Approval Rate' => 'border-pink-500',
+                        default => 'border-slate-300'
+                    } ?>"
                 >
                     <div
                         class="flex items-center
@@ -210,7 +209,7 @@ $statusBadgeClasses = [
                     Distribution of all application statuses.
                 </p>
 
-                <div class="h-72">
+                <div class="h-64">
                     <canvas id="statusChart"></canvas>
                 </div>
             </div>
@@ -278,8 +277,7 @@ $statusBadgeClasses = [
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead
-                        class="bg-slate-100
-                        dark:bg-slate-900"
+                        class="bg-purple-50 dark:bg-slate-700"
                     >
                         <tr>
                             <th class="p-3 text-left">
@@ -341,8 +339,7 @@ $statusBadgeClasses = [
                             ?>
 
                             <tr
-                                class="border-t
-                                dark:border-slate-700"
+                                class="border-t dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition"
                             >
                                 <td class="p-3">
                                     <p class="font-bold">
@@ -424,7 +421,7 @@ $statusBadgeClasses = [
             <?php foreach ($studentCards as $card): ?>
                 <div
                     class="bg-white dark:bg-slate-800
-                    rounded-xl p-5 shadow"
+                    rounded-xl p-5 shadow-md hover:shadow-xl transition duration-300-md hover:shadow-xl transition duration-300-md hover:shadow-xl transition duration-300"
                 >
                     <div
                         class="flex items-center
@@ -909,7 +906,7 @@ $statusBadgeClasses = [
             <?php foreach ($companyCards as $card): ?>
                 <div
                     class="bg-white dark:bg-slate-800
-                    rounded-xl p-5 shadow"
+                    rounded-xl p-5 shadow-md hover:shadow-xl transition duration-300"
                 >
                     <div
                         class="flex items-center

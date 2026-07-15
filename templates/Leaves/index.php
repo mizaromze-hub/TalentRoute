@@ -55,8 +55,7 @@ $pendingStatuses = [
 <div class="space-y-6">
 
     <div
-        class="flex flex-col sm:flex-row
-        sm:items-center sm:justify-between gap-4"
+        <div class="flex flex-wrap items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4 mb-4">
     >
         <div>
             <p
@@ -136,7 +135,14 @@ $pendingStatuses = [
         <?php foreach ($cards as $card): ?>
             <div
                 class="bg-white dark:bg-slate-800
-                rounded-2xl p-5 shadow"
+                        rounded-2xl
+                        border border-slate-200
+                        dark:border-slate-700
+                        shadow-lg
+                        hover:shadow-xl
+                        transition-all
+                        duration-300
+                        p-5"
             >
                 <div
                     class="flex items-center
@@ -229,17 +235,25 @@ $pendingStatuses = [
 
             <article
                 class="bg-white dark:bg-slate-800
-                rounded-2xl shadow overflow-hidden"
+                rounded-2xl
+                border border-slate-200
+                dark:border-slate-700
+                shadow-lg hover:shadow-xl
+                transition-all duration-300
+                overflow-hidden"
             >
                 <div
-                    class="p-5 md:p-6
+                    class="p-6 md:p-8
                     flex flex-col xl:flex-row gap-6"
                 >
                     <div class="flex-1 min-w-0">
 
                         <div
                             class="flex flex-wrap
-                            items-center gap-3"
+                            items-center justify-between
+                            border-b border-slate-200
+                            dark:border-slate-700
+                            pb-4 mb-4"
                         >
                             <h2
                                 class="text-xl font-black
@@ -249,8 +263,11 @@ $pendingStatuses = [
                             </h2>
 
                             <span
-                                class="inline-flex px-3 py-1
-                                rounded-full text-xs font-bold
+                                class="inline-flex
+                                        px-4 py-2
+                                        rounded-full
+                                        text-sm
+                                        font-bold
                                 <?= h($statusClass) ?>"
                             >
                                 <?= h($statusLabel) ?>
@@ -301,8 +318,13 @@ $pendingStatuses = [
                             sm:grid-cols-2 lg:grid-cols-4 gap-3"
                         >
                             <div
-                                class="rounded-xl bg-slate-50
-                                dark:bg-slate-900/60 p-3"
+                                class="rounded-xl
+                                        bg-slate-50
+                                        dark:bg-slate-900
+                                        border border-slate-200
+                                        dark:border-slate-700
+                                        shadow-sm
+                                        p-4"
                             >
                                 <p class="text-xs text-slate-500">
                                     Start Date
@@ -317,8 +339,13 @@ $pendingStatuses = [
                             </div>
 
                             <div
-                                class="rounded-xl bg-slate-50
-                                dark:bg-slate-900/60 p-3"
+                                class="rounded-xl
+                                        bg-slate-50
+                                        dark:bg-slate-900
+                                        border border-slate-200
+                                        dark:border-slate-700
+                                        shadow-sm
+                                        p-4"
                             >
                                 <p class="text-xs text-slate-500">
                                     End Date
@@ -333,8 +360,13 @@ $pendingStatuses = [
                             </div>
 
                             <div
-                                class="rounded-xl bg-slate-50
-                                dark:bg-slate-900/60 p-3"
+                                class="rounded-xl
+                                        bg-slate-50
+                                        dark:bg-slate-900
+                                        border border-slate-200
+                                        dark:border-slate-700
+                                        shadow-sm
+                                        p-4"
                             >
                                 <p class="text-xs text-slate-500">
                                     Total Days
@@ -352,8 +384,13 @@ $pendingStatuses = [
                             </div>
 
                             <div
-                                class="rounded-xl bg-slate-50
-                                dark:bg-slate-900/60 p-3"
+                                class="rounded-xl
+                                        bg-slate-50
+                                        dark:bg-slate-900
+                                        border border-slate-200
+                                        dark:border-slate-700
+                                        shadow-sm
+                                        p-4"
                             >
                                 <p class="text-xs text-slate-500">
                                     Company
@@ -372,16 +409,21 @@ $pendingStatuses = [
                         </div>
 
                         <div
-                            class="mt-4 rounded-xl
-                            bg-slate-100 dark:bg-slate-900
-                            p-4"
+                            class="mt-5
+                                    rounded-xl
+                                    bg-slate-50
+                                    dark:bg-slate-900
+                                    border border-slate-200
+                                    dark:border-slate-700
+                                    shadow-sm
+                                    p-5"
                         >
                             <p
                                 class="text-xs font-bold uppercase
                                 tracking-wider text-slate-500
                                 dark:text-slate-400"
                             >
-                                Reason
+                                Leave Reason
                             </p>
 
                             <p
@@ -406,18 +448,34 @@ $pendingStatuses = [
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center
-                                    text-sm font-bold text-purple-600
-                                    hover:text-purple-700"
+                                            bg-purple-600
+                                            hover:bg-purple-700
+                                            text-white
+                                            rounded-lg
+                                            px-4
+                                            py-2
+                                            text-sm
+                                            font-semibold
+                                            transition"
                                 >
                                     📎 View Supporting Document
                                 </a>
+
                             <?php else: ?>
-                                <span
-                                    class="text-sm text-slate-400"
-                                >
-                                    No supporting document
-                                </span>
-                            <?php endif; ?>
+    <span
+        class="inline-flex items-center
+               rounded-lg
+               bg-slate-100
+               dark:bg-slate-700
+               px-3 py-2
+               text-sm
+               text-slate-500
+               dark:text-slate-300"
+    >
+        No supporting document
+    </span>
+<?php endif; ?>
+
                         </div>
                     </div>
 
