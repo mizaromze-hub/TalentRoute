@@ -56,12 +56,8 @@
 
         <!-- Footer Card -->
         <p class="text-center text-xs text-slate-500 mt-6">
-            Belum mempunyai akaun? 
-            
+            Belum mempunyai akaun? <a href="mailto:admin@talentroute.com?subject=Permohonan Akaun TalentRoute"> Hubungi Admin </a>
         </p>
-        <a href="mailto:admin@talentroute.com?subject=Permohonan Akaun TalentRoute">
-    Hubungi Admin
-</a>
     </div>
 
 </body>
