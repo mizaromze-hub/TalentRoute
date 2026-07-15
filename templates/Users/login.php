@@ -56,9 +56,64 @@
 
         <!-- Footer Card -->
         <p class="text-center text-xs text-slate-500 mt-6">
-            Belum mempunyai akaun? <a href="#" class="text-purple-400 font-semibold hover:underline">Hubungi Admin</a>
+            Belum mempunyai akaun? 
+            <a href="#" onclick="openModal()"class="text-purple-400 font-semibold hover:underline"> Hubungi Admin </a>
         </p>
     </div>
+    
+<!-- Modal Hubungi Admin -->
+<div id="adminModal"
+     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
 
+    <div class="bg-slate-800 rounded-2xl shadow-xl p-8 w-96 relative">
+
+        <!-- Button Close -->
+        <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+
+        <div class="text-center">
+
+            <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-user-shield text-white text-2xl"></i>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white">
+                Hubungi Admin
+            </h2>
+
+            <p class="text-slate-400 mt-2">
+                Sila hubungi pentadbir sekiranya anda belum mempunyai akaun atau menghadapi masalah log masuk.
+            </p>
+
+            <div class="mt-6 space-y-4">
+
+                <div class="bg-slate-900 rounded-xl p-3">
+                    <i class="fa-solid fa-envelope text-purple-400 mr-2"></i>
+                    <span class="text-white">
+                        admin@talentroute.com
+                    </span>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl p-3">
+                    <i class="fa-solid fa-phone text-purple-400 mr-2"></i>
+                    <span class="text-white">
+                        012-3456789
+                    </span>
+                </div>
+
+            </div>
+
+            <button onclick="closeModal()"
+                    class="mt-6 w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-xl hover:from-purple-700 hover:to-blue-700">
+                Tutup
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
