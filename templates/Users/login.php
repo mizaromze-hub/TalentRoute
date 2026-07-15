@@ -116,18 +116,6 @@
 
 </div>
 
-    <script>
 
-function openModal() {
-    document.getElementById("adminModal").classList.remove("hidden");
-    document.getElementById("adminModal").classList.add("flex");
-}
-
-function closeModal() {
-    document.getElementById("adminModal").classList.remove("flex");
-    document.getElementById("adminModal").classList.add("hidden");
-}
-
-</script>
 </body>
 </html>
