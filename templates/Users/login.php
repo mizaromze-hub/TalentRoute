@@ -57,7 +57,8 @@
         <!-- Footer Card -->
         <p class="text-center text-xs text-slate-500 mt-6">
             Belum mempunyai akaun? 
-<a href="#" class="text-purple-400 font-semibold hover:underline">
+<a href="https://www.google.com" target="_blank"
+   class="text-purple-400 font-semibold hover:underline">
     Hubungi Admin
 </a>
         </p>
