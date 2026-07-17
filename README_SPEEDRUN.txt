@@ -16,3 +16,7 @@ Test flow:
 - Company lihat Applications dan update status/date/remarks.
 - Admin lihat dashboard, student/company list, applications, approve/reject cuti.
 - Student cetak surat selepas status Approved/Offered.
+
+
+Link untuk video presentation
+https://drive.google.com/file/d/1E38sb-Hisu4-YIcNb32SnJSfi8u7ww8D/view?usp=sharing
